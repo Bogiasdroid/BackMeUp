@@ -20,13 +20,13 @@ class Controller:
             y = too
             if x and y:
                 copy_tree(x, y)
-                self.messanger("Επιτυχής Μεταφορά")
+                self.messanger("Successfull Transfer")
                 if not self.last:
                     DBmodel.insert(x, too)
                 elif x != self.last[0][0] or too != self.last[0][1]:
                     DBmodel.insert(x, too)
                 else:
-                    self.messanger("Παρακαλώ ελέγξτε τα πεδία")
+                    self.messanger("please check the fields")
         except Exception as e:
             self.messanger(str(e))
 
